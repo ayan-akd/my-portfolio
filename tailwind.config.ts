@@ -11,9 +11,9 @@ export default {
   theme: {
   	extend: {
 		fontFamily: {
-			sans: ['var(--font-fira-sans)'],
-			mono: ['var(--font-fira-code)'],
-		  },
+			"fira-sans":"var(--font-fira-sans)",
+			"fira-code":"var(--font-fira-code)",
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

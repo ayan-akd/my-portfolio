@@ -24,7 +24,7 @@ const GlowText = ({
           
           /* Mobile styles (default) */
           top-[10%] left-[-8%]
-          w-[120px] h-[56px]
+          w-[110px] h-[50px]
           
           /* Tablet styles */
           sm:w-[130px] sm:h-[55px]

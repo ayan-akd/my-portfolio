@@ -30,7 +30,18 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed md:top-[49px] md:right-[51px] lg:top-[89px] lg:right-[91px] flex items-center gap-6 z-50">
+      <div
+        className="
+  fixed flex items-center
+  /* Mobile styles - spread elements across width */
+  justify-between w-full px-8 top-[30px]
+  /* Tablet styles - revert to right-aligned */
+  md:justify-end md:w-auto  md:px-0 md:top-[49px] md:right-[51px]
+  /* Desktop styles */
+  lg:top-[89px] lg:right-[91px]
+  gap-6 z-50
+"
+      >
         {/* dark mode and light mode toggle */}
 
         <Image
@@ -41,7 +52,7 @@ const Navbar = () => {
           alt="Mode Toggle"
           width={30}
           height={30}
-          className="mr-2 cursor-pointer md:w-14 md:h-14 lg:w-16 lg:h-16"
+          className="mr-2 cursor-pointer w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16"
         />
 
         {/* Menu Icon */}
@@ -51,7 +62,7 @@ const Navbar = () => {
           alt="Menu"
           width={30}
           height={30}
-          className="md:w-14 md:h-14 lg:w-16 lg:h-16 cursor-pointer"
+          className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 cursor-pointer"
         />
       </div>
       {/* Background Animation */}
@@ -79,12 +90,13 @@ const Navbar = () => {
                   : "blur(20.649999618530273px)",
             }}
           >
-            <div className="fixed right-5 top-0 h-screen space-y-4 lg:space-y-0 z-40 md:pt-32 lg:pt-44 lg:px-8">
+            <div className="fixed text-end right-0 md:right-5 md:top-0 h-screen
+            space-y-2 md:space-y-4 lg:space-y-0 z-40 pt-20 md:pt-32 lg:pt-44 lg:px-8">
               {menuItems.map((item, index) => (
                 <a
                   key={index}
                   href={item.href}
-                  className={`flex justify-end items-center lg:gap-0 md:w-[600px] lg:w-[857px] lg:h-[131px] py-4 md:text-6xl lg:text-[70px] font-medium px-10 rounded-lg transition-all duration-200  ${
+                  className={`flex justify-end items-center lg:gap-0 h-[80px] md:w-[600px] md:h-[100px] lg:w-[857px] lg:h-[131px] py-4 text-[40px] md:text-6xl lg:text-[70px] font-medium px-8 md:px-10 rounded-lg transition-all duration-200  ${
                     resolvedTheme === "light"
                       ? "hover:bg-[radial-gradient(158.52%_120.61%_at_50.06%_50.38%,_#28344C_0%,_#000_100%)] hover:border-[#1A2231] hover:filter-[blur(0px)] hover:text-[#EBF1FF]"
                       : "hover:bg-[radial-gradient(455.51%_346.56%_at_50.06%_50.38%,_#E2F1FF_0%,_#0F1027_100%)] hover:rounded hover:filter-[blur(3.9000000953674316px)] hover:text-[#0F0E2B]"
@@ -92,7 +104,7 @@ const Navbar = () => {
                 >
                   {item.name}
                 </a>
-              ))} 
+              ))}
             </div>
           </motion.div>
         )}

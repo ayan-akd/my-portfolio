@@ -25,7 +25,6 @@ const socialIcons = [
   },
 ];
 
-
 export default function Introduction() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -68,15 +67,15 @@ export default function Introduction() {
         />
       </AnimatePresence>
 
-      <div className=" min-h-screen mx-auto px-4 md:pt-[65px] md:pl-[4 0px] lg:pt-[104px] lg:pl-[97px]">
-        <div className="flex gap-[30px]">
+      <div className=" min-h-screen mx-auto px-4 pt-[105px] md:pt-[65px] md:pl-[4 0px] lg:pt-[104px] lg:pl-[97px]">
+        <div className="flex gap-[37px] md:gap-[30px]">
           {socialIcons.map((icon, index) => (
             <a
               key={index}
               href={icon.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mr-4"
+              className="inline-block md:mr-4"
             >
               <Image
                 src={icon.icon}
@@ -88,29 +87,47 @@ export default function Introduction() {
             </a>
           ))}
         </div>
-        <div className="mt-2 lg:mt-7">
+        <div className="mt-5 lg:mt-7">
           <div className="flex items-center">
-            <h1 className="md:text-5xl lg:text-[62px]">
-              Hi, I&apos;m <span className={`font-extrabold text-[#171717]`}><GlowText text="Ayan," theme={resolvedTheme as "light" | "dark"}/></span>
+            <h1 className="text-[40px] md:text-5xl lg:text-[62px]">
+              Hi, I&apos;m{" "}
+              <span className={`font-extrabold text-[#171717]`}>
+                <GlowText
+                  text="Ayan,"
+                  theme={resolvedTheme as "light" | "dark"}
+                />
+              </span>
             </h1>
             <Image
               src={
                 resolvedTheme === "light" ? "/lightBulb.svg" : "/darkBulb.svg"
               }
-              alt="Bulb" 
+              alt="Bulb"
               width={40}
               height={40}
-              className="md:w-[67px] md:h-[67px] lg:w-[107px] lg:h-[107px] lg:mb-5"
+              className="hidden md:block md:w-[67px] md:h-[67px] lg:w-[107px] lg:h-[107px] lg:mb-5"
             />
           </div>
-          <p className="text-xl mt-5 lg:mt-0 md:max-w-[430px] lg:max-w-[530px]">I&apos;m passionate about developing web applications that meet technical requirements and deliver delightful user experiences. Proficient in React.js, Redux, Next.js. </p>
-          <button onClick={handleDownloadClick} className=" mt-5 lg:mt-10 bg-[#05F] text-white px-4 py-2 rounded-[50px] lg:rounded-[45px] w-[217px] h-[60px] lg:w-[480px] lg:h-[67px] flex items-center justify-center gap-3 lg:gap-5">
-            Resume 
-            <Image src={"/download.svg"} alt="Download" width={20} height={20} className="ml-2" />
+          <p className="text-[17px] md:text-xl mt-[18px] md:mt-5 lg:mt-0 max-w-[373px] md:max-w-[430px] lg:max-w-[530px]">
+            I&apos;m passionate about developing web applications that meet
+            technical requirements and deliver delightful user experiences.
+            Proficient in React.js, Redux, Next.js.{" "}
+          </p>
+          <button
+            onClick={handleDownloadClick}
+            className="mt-[15px] md:mt-5 lg:mt-10 bg-[#05F] text-white px-4 py-2 rounded-[50px] lg:rounded-[45px] w-[217px] h-[60px] lg:w-[480px] lg:h-[67px] flex items-center justify-center gap-[13px] lg:gap-5"
+          >
+            Resume
+            <Image
+              src={"/download.svg"}
+              alt="Download"
+              width={20}
+              height={20}
+              className="ml-2"
+            />
           </button>
         </div>
-      </div>
+      </div> 
     </div>
   );
 }
- 
