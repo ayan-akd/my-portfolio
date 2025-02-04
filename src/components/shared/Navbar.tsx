@@ -24,8 +24,8 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "Home", href: "#" },
-    { name: "Skills", href: "#" },
+    { name: "Home", href: "#intro" },
+    { name: "Skills", href: "#skills" },
     { name: "Project", href: "#" },
     { name: "Services", href: "#" },
     { name: "Contact with me", href: "#" },
@@ -101,6 +101,7 @@ const Navbar = () => {
                 <a
                   key={index}
                   href={item.href}
+                  onClick={() => setMenuOpen(false)}
                   className={`flex justify-end items-center lg:gap-0 h-[80px] md:w-[587px] md:h-[111px] lg:w-[857px] lg:h-[131px] py-4 text-[40px] md:text-6xl lg:text-[70px] px-8 md:px-8 lg:px-10 rounded-lg transition-all duration-200  ${
                     resolvedTheme === "light"
                       ? "hover:bg-[radial-gradient(158.52%_120.61%_at_50.06%_50.38%,_#28344C_0%,_#000_100%)] hover:border-[#1A2231] hover:filter-[blur(0px)] hover:text-[#EBF1FF]"

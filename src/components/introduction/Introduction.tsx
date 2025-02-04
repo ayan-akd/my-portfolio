@@ -9,7 +9,7 @@ import facebookIcon from "@/assets/icons/facebook.svg";
 import instagramIcon from "@/assets/icons/instagram.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import githubIcon from "@/assets/icons/github.svg";
-import initialForBackground from "@/assets/images/initial.png";
+import initialForBackground from "@/assets/images/initial.svg";
 import lightBulb from "@/assets/icons/lightBulb.svg";
 import darkBulb from "@/assets/icons/darkBulb.svg";
 import downloadIcon from "@/assets/icons/download.svg";
@@ -76,6 +76,7 @@ export default function Introduction() {
       </AnimatePresence>
 
       <div className="mx-auto min-h-screen px-4 pt-[105px] md:pl-[28px] md:pt-[63px] lg:pl-[97px] lg:pt-[104px]">
+        {/* social icons  */}
         <div className="flex gap-[37px] md:gap-[20px]">
           {socialIcons.map((icon, index) => (
             <a
@@ -90,16 +91,17 @@ export default function Introduction() {
                 alt={`${icon.icon} icon`}
                 width={10}
                 height={10}
-                className="h-6 w-6"
+                className="h-6 w-6 cursor-pointer"
               />
             </a>
           ))}
         </div>
+        {/* introduction  */}
         <div className="mt-2 lg:mt-7">
           <div className="flex items-center">
             <h1 className="text-[40px] md:text-6xl lg:text-[62px]">
               Hi, I&apos;m{" "}
-              <span className={`font-extrabold text-[#171717]`}>
+              <span className={`font-[900] text-[#171717]`}>
                 <GlowText
                   text="Ayan,"
                   theme={resolvedTheme as "light" | "dark"}
