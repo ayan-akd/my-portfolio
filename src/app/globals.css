@@ -73,7 +73,7 @@
 }
 
 * {
-  cursor: url("/cursor.svg"), auto;
+  cursor: url("../assets/cursor.svg"), auto;
 }
 
 .glow-text {

@@ -1,4 +1,3 @@
-import React from 'react';
 
 const GlowText = ({ 
   text,
@@ -23,16 +22,16 @@ const GlowText = ({
           absolute z-[-1]
           
           /* Mobile styles (default) */
-          top-[10%] left-[-8%]
-          w-[110px] h-[50px]
+          top-[10%] left-[-10%]
+          w-[116px] h-[53px]
           
           /* Tablet styles */
-          sm:w-[130px] sm:h-[55px]
-          sm:top-[2%] sm:left-[-8%]
+          sm:w-[159px] sm:h-[75px]
+          sm:top-[-2%] sm:left-[-8%]
           
           /* Desktop styles */
-          lg:w-[170px] lg:h-[76px]
-          lg:top-[2%] lg:left-[-8%]
+          lg:w-[173px] lg:h-[76px]
+          lg:top-[-2%] lg:left-[-8%]
           
           flex-shrink-0 rounded-[20px]
           blur-[7px] opacity-100

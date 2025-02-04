@@ -5,22 +5,30 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import GlowText from "../ui/GlowText";
+import facebookIcon from "@/assets/icons/facebook.svg";
+import instagramIcon from "@/assets/icons/instagram.svg";
+import linkedinIcon from "@/assets/icons/linkedin.svg";
+import githubIcon from "@/assets/icons/github.svg";
+import initialForBackground from "@/assets/images/initial.png";
+import lightBulb from "@/assets/icons/lightBulb.svg";
+import darkBulb from "@/assets/icons/darkBulb.svg";
+import downloadIcon from "@/assets/icons/download.svg";
 
 const socialIcons = [
   {
-    icon: "/facebook.svg",
+    icon: facebookIcon,
     link: "https://www.facebook.com/akd444/",
   },
   {
-    icon: "/instagram.svg",
+    icon: instagramIcon,
     link: "https://www.instagram.com/akd420v2",
   },
   {
-    icon: "/linkedin.svg",
+    icon: linkedinIcon,
     link: "https://www.linkedin.com/in/ayan-kumar-akd/",
   },
   {
-    icon: "/github.svg",
+    icon: githubIcon,
     link: "https://github.com/ayan-akd",
   },
 ];
@@ -48,7 +56,7 @@ export default function Introduction() {
   return (
     <div
       className="bg-no-repeat"
-      style={{ backgroundImage: "url('/initial.png')" }}
+      style={{ backgroundImage: `url(${initialForBackground.src})` }}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -57,7 +65,7 @@ export default function Introduction() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-0 w-full h-full z-[-1]"
+          className="absolute inset-0 z-[-1] h-full w-full"
           style={{
             background:
               resolvedTheme === "dark"
@@ -67,8 +75,8 @@ export default function Introduction() {
         />
       </AnimatePresence>
 
-      <div className=" min-h-screen mx-auto px-4 pt-[105px] md:pt-[65px] md:pl-[4 0px] lg:pt-[104px] lg:pl-[97px]">
-        <div className="flex gap-[37px] md:gap-[30px]">
+      <div className="mx-auto min-h-screen px-4 pt-[105px] md:pl-[28px] md:pt-[63px] lg:pl-[97px] lg:pt-[104px]">
+        <div className="flex gap-[37px] md:gap-[20px]">
           {socialIcons.map((icon, index) => (
             <a
               key={index}
@@ -82,14 +90,14 @@ export default function Introduction() {
                 alt={`${icon.icon} icon`}
                 width={10}
                 height={10}
-                className="w-6 h-6"
+                className="h-6 w-6"
               />
             </a>
           ))}
         </div>
-        <div className="mt-5 lg:mt-7">
+        <div className="mt-2 lg:mt-7">
           <div className="flex items-center">
-            <h1 className="text-[40px] md:text-5xl lg:text-[62px]">
+            <h1 className="text-[40px] md:text-6xl lg:text-[62px]">
               Hi, I&apos;m{" "}
               <span className={`font-extrabold text-[#171717]`}>
                 <GlowText
@@ -99,27 +107,25 @@ export default function Introduction() {
               </span>
             </h1>
             <Image
-              src={
-                resolvedTheme === "light" ? "/lightBulb.svg" : "/darkBulb.svg"
-              }
+              src={resolvedTheme === "light" ? lightBulb : darkBulb}
               alt="Bulb"
               width={40}
               height={40}
-              className="hidden md:block md:w-[67px] md:h-[67px] lg:w-[107px] lg:h-[107px] lg:mb-5"
+              className="hidden md:mb-2 md:block md:h-[73px] md:w-[73px] lg:mb-5 lg:h-[107px] lg:w-[107px]"
             />
           </div>
-          <p className="text-[17px] md:text-xl mt-[18px] md:mt-5 lg:mt-0 max-w-[373px] md:max-w-[430px] lg:max-w-[530px]">
+          <p className="mt-[18px] max-w-[373px] text-[17px] md:mt-5 md:max-w-[599px] lg:mt-0 lg:max-w-[530px]">
             I&apos;m passionate about developing web applications that meet
             technical requirements and deliver delightful user experiences.
             Proficient in React.js, Redux, Next.js.{" "}
           </p>
           <button
             onClick={handleDownloadClick}
-            className="mt-[15px] md:mt-5 lg:mt-10 bg-[#05F] text-white px-4 py-2 rounded-[50px] lg:rounded-[45px] w-[217px] h-[60px] lg:w-[480px] lg:h-[67px] flex items-center justify-center gap-[13px] lg:gap-5"
+            className="mt-[15px] flex h-[60px] w-[217px] flex-shrink-0 items-center justify-center gap-[13px] rounded-[50px] bg-[#05F] px-[14px] py-0 text-white md:mt-[17px] md:w-[320px] md:gap-5 md:rounded-[45px] lg:mt-10 lg:h-[67px] lg:w-[480px]"
           >
             Resume
             <Image
-              src={"/download.svg"}
+              src={downloadIcon}
               alt="Download"
               width={20}
               height={20}
@@ -127,7 +133,7 @@ export default function Introduction() {
             />
           </button>
         </div>
-      </div> 
+      </div>
     </div>
   );
 }
