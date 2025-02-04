@@ -99,7 +99,7 @@ export default function Introduction() {
         {/* introduction  */}
         <div className="mt-2 lg:mt-7">
           <div className="flex items-center">
-            <h1 className="text-[40px] md:text-6xl lg:text-[62px]">
+            <h1 className="text-[40px] dark:text-[#DDEDE2] md:text-6xl lg:text-[62px]">
               Hi, I&apos;m{" "}
               <span className={`font-[900] text-[#171717]`}>
                 <GlowText
@@ -116,7 +116,7 @@ export default function Introduction() {
               className="hidden md:mb-2 md:block md:h-[73px] md:w-[73px] lg:mb-5 lg:h-[107px] lg:w-[107px]"
             />
           </div>
-          <p className="mt-[18px] max-w-[373px] text-[17px] md:mt-5 md:max-w-[599px] lg:mt-0 lg:max-w-[530px]">
+          <p className="mt-[18px] max-w-[373px] text-[17px] dark:text-[#DDEDE2] md:mt-5 md:max-w-[599px] lg:mt-0 lg:max-w-[530px]">
             I&apos;m passionate about developing web applications that meet
             technical requirements and deliver delightful user experiences.
             Proficient in React.js, Redux, Next.js.{" "}
