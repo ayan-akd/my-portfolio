@@ -9,7 +9,6 @@ import facebookIcon from "@/assets/icons/facebook.svg";
 import instagramIcon from "@/assets/icons/instagram.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import githubIcon from "@/assets/icons/github.svg";
-import initialForBackground from "@/assets/images/initial.svg";
 import lightBulb from "@/assets/icons/lightBulb.svg";
 import darkBulb from "@/assets/icons/darkBulb.svg";
 import downloadIcon from "@/assets/icons/download.svg";
@@ -54,10 +53,7 @@ export default function Introduction() {
   if (!mounted) return null;
 
   return (
-    <div
-      className="bg-no-repeat"
-      style={{ backgroundImage: `url(${initialForBackground.src})` }}
-    >
+    <div>
       <AnimatePresence mode="wait">
         <motion.div
           key={resolvedTheme}
@@ -85,6 +81,7 @@ export default function Introduction() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block md:mr-4"
+              aria-label={`${icon.icon} social link`}
             >
               <Image
                 src={icon.icon}

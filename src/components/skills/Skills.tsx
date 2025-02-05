@@ -2,7 +2,6 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import initialForBackground from "@/assets/images/initial.svg";
 import htmlIcon from "@/assets/icons/skill-icons/html.svg";
 import cssIcon from "@/assets/icons/skill-icons/css.svg";
 import jsIcon from "@/assets/icons/skill-icons/javascript.svg";
@@ -68,10 +67,7 @@ export default function Skills() {
   }, []);
   if (!mounted) return null;
   return (
-    <div
-      className="min-h-screen bg-no-repeat"
-      style={{ backgroundImage: `url(${initialForBackground.src})` }}
-    >
+    <div className="min-h-screen">
       {/* Background Gradient */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -90,11 +86,11 @@ export default function Skills() {
         />
       </AnimatePresence>
       {/* Heading */}
-      <h1 className="px-6 pt-[80px] text-[40px] font-[900] lg:px-[91px] lg:text-[62px] dark:text-[#DDEDE2]">
+      <h1 className="px-6 pt-[80px] text-[40px] font-[900] dark:text-[#DDEDE2] lg:px-[91px] lg:text-[62px]">
         Skills
       </h1>
       {/* Skill Categories */}
-      <div className="mt-10 pb-20 flex flex-wrap justify-center gap-10">
+      <div className="mt-10 flex flex-wrap justify-center gap-10 pb-20">
         {skillCategories.map((category, index) => (
           <SkillCard key={index} category={category} />
         ))}

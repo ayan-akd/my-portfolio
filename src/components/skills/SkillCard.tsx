@@ -18,30 +18,29 @@ export default function SkillCard({ category }: { category: ISkillCategory }) {
       </h2>
 
       <div className="mt-7">
-        {category.skills.map((skill, i) => (
-          <div key={i}>
-            <li
-              key={i}
-              className="flex items-center gap-5 pl-5 font-fira-code text-[#072600] dark:text-[#170629]"
-            >
+        <ul>
+          {category.skills.map((skill, i) => (
+            <li key={i}>
+              <div className="flex items-center gap-5 pl-5 font-fira-code text-[#072600] dark:text-[#170629]">
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={20}
+                  height={20}
+                  className="h-[21px] w-[21px]"
+                />
+                {skill.name}
+              </div>
               <Image
-                src={skill.icon}
-                alt={skill.name}
-                width={20}
-                height={20}
-                className="h-[21px] w-[21px]"
+                src={underline}
+                alt="underline"
+                width={100}
+                height={1}
+                className="mx-auto my-4 w-[270px]"
               />
-              {skill.name}
             </li>
-            <Image
-              src={underline}
-              alt="underline"
-              width={100}
-              height={1}
-              className="mx-auto my-4 w-[270px]"
-            />
-          </div>
-        ))}
+          ))}
+        </ul>
       </div>
     </div>
   );
