@@ -90,9 +90,16 @@ export default function Skills() {
         Skills
       </h1>
       {/* Skill Categories */}
-      <div className="mt-10 flex flex-wrap justify-center gap-10 pb-20">
+      <div className="mt-10 flex flex-wrap justify-center gap-10 pb-20 lg:flex-row-reverse lg:justify-evenly">
         {skillCategories.map((category, index) => (
-          <SkillCard key={index} category={category} />
+          <div
+            key={index}
+            className={
+              index === 0 ? "lg:mt-0" : index === 1 ? "lg:mt-20" : "lg:mt-40"
+            }
+          >
+            <SkillCard category={category} />
+          </div>
         ))}
       </div>
     </div>
