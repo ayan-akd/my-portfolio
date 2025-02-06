@@ -6,7 +6,7 @@ import underline from "@/assets/Underline.svg";
 export default function SkillCard({ category }: { category: ISkillCategory }) {
   return (
     <div className="h-[471px] w-[371px] rounded-[17px] border border-solid border-[#072d011f] bg-[#F8FFF6] p-[6px] dark:bg-[#DDEDE2] md:w-[340px] lg:h-[477px] lg:w-[324px]">
-      <h2 className="flex h-[48px] w-[359px] items-center justify-between rounded-[13px] bg-[#072600] px-4 text-[27px] font-bold text-[#F5FFF0] dark:bg-[#170629] dark:text-[#DDEDE2] md:w-[329px] lg:h-[52px] lg:w-[312px] lg:text-[37px]">
+      <h2 className="flex h-[48px] w-[359px] items-center justify-between rounded-[13px] bg-[#072600] px-4 text-[17px] font-bold text-[#F5FFF0] dark:bg-[#170629] dark:text-[#DDEDE2] md:w-[329px] lg:h-[52px] lg:w-[312px]">
         {category.title}
         <Image
           src={initialIcon}
@@ -36,7 +36,7 @@ export default function SkillCard({ category }: { category: ISkillCategory }) {
                 alt="underline"
                 width={100}
                 height={1}
-                className="mx-auto my-4 w-[270px]"
+                className="mx-auto my-4 w-[316px] md:w-[285px] lg:w-[270px]"
               />
             </li>
           ))}
