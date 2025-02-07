@@ -3,16 +3,18 @@ import { Fira_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/shared/Navbar";
+import darkFavIcon from "@/assets/favDark.ico";
+import lightFavIcon from "@/assets/favLight.ico";
 
 const firaSans = Fira_Sans({
   subsets: ["latin"],
   variable: "--font-fira-sans",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-code",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -52,6 +54,18 @@ export const metadata: Metadata = {
       "MERN-stack developer skilled in Next.js, React, TypeScript, Redux, Express, Node.js, MongoDB, and Mongoose. Explore projects, technical skills, and experience in modern web development.",
     type: "website",
   },
+  icons: [
+    {
+      url: lightFavIcon.src,
+      type: "image/x-icon",
+      media: "(prefers-color-scheme: light)",
+    },
+    {
+      url: darkFavIcon.src,
+      type: "image/x-icon",
+      media: "(prefers-color-scheme: dark)",
+    },
+  ],
 };
 
 export default function RootLayout({

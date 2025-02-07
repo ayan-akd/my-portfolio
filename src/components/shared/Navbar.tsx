@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import lightToggle from "@/assets/icons/lightToggle.svg";
 import darkToggle from "@/assets/icons/darkToggle.svg";
@@ -15,24 +15,24 @@ const Navbar = () => {
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     setMounted(true);
 
-    let timeout: NodeJS.Timeout;
-
     const handleScroll = () => {
       setIsScrolling(true);
-      clearTimeout(timeout);
-      timeout = setTimeout(() => setIsScrolling(false), 200);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => setIsScrolling(false), 500); // Delay increased to 500ms for better UX
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
-      clearTimeout(timeout);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
 
   const handleTheme = () => {
     setTheme(resolvedTheme === "light" ? "dark" : "light");
@@ -52,7 +52,7 @@ const Navbar = () => {
     <>
       <motion.div
       animate={{ opacity: isScrolling ? 0 : 1, y: isScrolling ? -20 : 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
         className="
   fixed flex items-center gap-6 md:gap-5 lg:gap-6 z-50
   /* Mobile styles - spread elements across width */
@@ -114,13 +114,13 @@ const Navbar = () => {
             }}
           >
             <div className="fixed text-end right-1 md:right-2 md:top-0 h-screen
-            space-y-5 md:space-y-4 lg:space-y-0 z-40 pt-24 md:pt-32 lg:pt-44 lg:px-8">
+            space-y-2 md:space-y-1 lg:space-y-0 z-40 pt-20 md:pt-28 lg:pt-40 lg:px-8 2xl:pr-[265px]">
               {menuItems.map((item, index) => (
                 <a
                   key={index}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`flex justify-end items-center lg:gap-0 w-[394px] h-[70px] md:w-[587px] md:h-[111px] lg:w-[857px] lg:h-[131px] py-4 text-[40px] md:text-6xl lg:text-[70px] px-5 lg:px-10 rounded-lg transition-all duration-200  ${
+                  className={`flex justify-end items-center font-light hover:font-normal lg:gap-0 w-[394px] h-[70px] md:w-[710px] md:h-[111px] lg:w-[857px] lg:h-[100px] py-4 text-[40px] md:text-6xl lg:text-[70px] px-5 lg:px-10 rounded-lg transition-colors duration-200  ${
                     resolvedTheme === "light"
                       ? "hover:bg-[radial-gradient(158.52%_120.61%_at_50.06%_50.38%,_#28344C_0%,_#000_100%)] hover:border-[#1A2231] hover:filter-[blur(0px)] hover:text-[#EBF1FF]"
                       : "hover:bg-[radial-gradient(455.51%_346.56%_at_50.06%_50.38%,_#E2F1FF_0%,_#0F1027_100%)] hover:rounded hover:filter-[blur(3.9000000953674316px)] text-[#DDEDE2] hover:text-[#0F0E2B]"
