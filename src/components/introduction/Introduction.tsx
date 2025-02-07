@@ -71,7 +71,7 @@ export default function Introduction() {
         />
       </AnimatePresence>
 
-      <div className="mx-auto min-h-screen px-4 pt-[105px] md:pl-[28px] md:pt-[63px] lg:pl-[97px] lg:pt-[104px]">
+      <div className="max-w-[1440px] mx-auto min-h-screen px-4 pt-[105px] md:pl-[28px] md:pt-[63px] lg:pl-[97px] lg:pt-[104px]">
         {/* social icons  */}
         <div className="flex gap-[37px] md:gap-[20px]">
           {socialIcons.map((icon, index) => (
@@ -120,7 +120,7 @@ export default function Introduction() {
           </p>
           <button
             onClick={handleDownloadClick}
-            className="mt-[15px] flex h-[60px] w-[217px] flex-shrink-0 items-center justify-center gap-[13px] rounded-[50px] bg-[#05F] px-[14px] py-0 text-white md:mt-[17px] md:w-[320px] md:gap-5 md:rounded-[45px] lg:mt-10 lg:h-[67px] lg:w-[480px]"
+            className="mt-[15px] flex h-[60px] w-[217px] flex-shrink-0 items-center justify-center gap-[13px] rounded-[50px] bg-[#05F] px-[14px] py-0 text-white md:mt-[17px] md:w-[320px] md:gap-5 md:rounded-[45px] lg:mt-10 lg:h-[50px] lg:w-[480px]"
           >
             Resume
             <Image

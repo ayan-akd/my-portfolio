@@ -18,6 +18,7 @@ import netlifyIcon from "@/assets/icons/skill-icons/netlify.svg";
 import vercelIcon from "@/assets/icons/skill-icons/vercel.svg";
 import gitIcon from "@/assets/icons/skill-icons/git.svg";
 import vscodeIcon from "@/assets/icons/skill-icons/vscode.svg";
+import mongodbIcon from "@/assets/icons/skill-icons/mongodb.svg";
 import SkillCard from "./SkillCard";
 
 export interface ISkillCategory {
@@ -42,6 +43,7 @@ const skillCategories = [
     skills: [
       { name: "Node JS", icon: nodeIcon },
       { name: "Express", icon: expressIcon },
+      { name: "MongoDB", icon: mongodbIcon },
       { name: "Firebase", icon: firebaseIcon },
       { name: "JWT Authentication", icon: jwtIcon },
     ],
@@ -85,22 +87,24 @@ export default function Skills() {
           }}
         />
       </AnimatePresence>
-      {/* Heading */}
-      <h1 className="px-6 pt-[80px] text-[40px] font-[900] dark:text-[#DDEDE2] lg:px-[91px] lg:text-[62px]">
+      <div className="max-w-[1440px] mx-auto">
+        {/* Heading */}
+      <h1 className="px-6 pt-[80px] md:pt-[50px] lg:pt-[80px] text-[40px] font-[900] dark:text-[#DDEDE2] lg:px-[74px] lg:text-[62px]">
         Skills
       </h1>
       {/* Skill Categories */}
-      <div className="mt-10 flex flex-wrap justify-center gap-10 pb-20 lg:mx-auto lg:w-[90%] lg:flex-row-reverse lg:justify-between lg:gap-14">
+      <div className="mt-10 lg:mt-10 flex flex-wrap justify-center gap-10 pb-20 lg:mx-auto lg:w-[90%] lg:flex-row-reverse lg:justify-between lg:gap-14">
         {skillCategories.map((category, index) => (
           <div
             key={index}
             className={
-              index === 0 ? "lg:mt-0" : index === 1 ? "lg:mt-20" : "lg:mt-40"
+              index === 0 ? "lg:mt-0" : index === 1 ? "lg:mt-10" : "lg:mt-20"
             }
           >
             <SkillCard category={category} />
           </div>
         ))}
+      </div>
       </div>
     </div>
   );
