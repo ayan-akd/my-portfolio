@@ -84,7 +84,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className="relative max-w-[1440px] mx-auto">
           <Navbar />
+          </div>
           {children}
         </ThemeProvider>
       </body>

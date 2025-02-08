@@ -56,13 +56,13 @@ const Navbar = () => {
         className="
   fixed flex items-center gap-6 md:gap-5 lg:gap-6 z-50
   /* Mobile styles - spread elements across width */
-  justify-between w-full px-5 top-[30px]
+  justify-between w-full px-5 top-[3.5%]
   /* Tablet styles - revert to right-aligned */
-  md:justify-end md:w-auto  md:px-0 md:top-[42px] md:right-[24px]
+  md:justify-end md:w-auto  md:px-0 md:top-[5.1%] md:right-[3.4%]
   /* Desktop styles */
-  lg:top-[89px] lg:right-[91px]
+  lg:top-[9.8%] lg:right-[5%]
   /*Larger Desktop styles */
-  2xl:right-[312px]
+  2xl:max-w-screen-2xl 2xl:mx-auto 2xl:top-[8.4%] 2xl:px-[11.2%]
 "
       > 
         {/* dark mode and light mode toggle */}
@@ -114,16 +114,16 @@ const Navbar = () => {
             }}
           >
             <div className="fixed text-end right-1 md:right-2 md:top-0 h-screen
-            space-y-2 md:space-y-1 lg:space-y-0 z-40 pt-20 md:pt-28 lg:pt-40 lg:px-8 2xl:pr-[265px]">
+            space-y-2 md:space-y-1 lg:space-y-0 2xl:space-y-5 z-40 pt-20 md:pt-28 lg:pt-40 2xl:pt-44 lg:px-8 2xl:pr-[265px]">
               {menuItems.map((item, index) => (
                 <a
                   key={index}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`flex justify-end items-center font-light hover:font-normal lg:gap-0 w-[394px] h-[70px] md:w-[710px] md:h-[111px] lg:w-[857px] lg:h-[100px] py-4 text-[40px] md:text-6xl lg:text-[70px] px-5 lg:px-10 rounded-lg transition-colors duration-200  ${
+                  className={`flex justify-end items-center font-light hover:font-normal lg:gap-0 w-[394px] h-[70px] md:w-[710px] md:h-[111px] lg:w-[857px] lg:h-[100px] py-4 text-[40px] md:text-6xl lg:text-[70px] px-5 lg:px-10 transition-colors duration-200  ${
                     resolvedTheme === "light"
-                      ? "hover:bg-[radial-gradient(158.52%_120.61%_at_50.06%_50.38%,_#28344C_0%,_#000_100%)] hover:border-[#1A2231] hover:filter-[blur(0px)] hover:text-[#EBF1FF]"
-                      : "hover:bg-[radial-gradient(455.51%_346.56%_at_50.06%_50.38%,_#E2F1FF_0%,_#0F1027_100%)] hover:rounded hover:filter-[blur(3.9000000953674316px)] text-[#DDEDE2] hover:text-[#0F0E2B]"
+                      ? "hover:bg-[radial-gradient(209.05%_159.05%_at_86.46%_50%,_#28344C_0%,_#000_100%)] hover:border-[#1A2231] hover:filter-[blur(0px)] hover:text-[#EBF1FF]"
+                      : "hover:bg-[radial-gradient(478.08%_363.74%_at_84.42%_49.62%,_#E2F1FF_0%,_#0F1027_100%)] hover:rounded hover:filter-[blur(3.9000000953674316px)] text-[#DDEDE2] hover:text-[#0F0E2B]"
                   }`}
                 >
                   {item.name}
