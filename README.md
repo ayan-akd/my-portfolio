@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# akd-portfolio
 
-## Getting Started
+A personal portfolio website built with Next.js.
 
-First, run the development server:
+## Technology Stack
+
+*   [Next.js](https://nextjs.org/) - A React framework for building performant web applications.
+*   [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+*   [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript.
+*   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework.
+*   [Radix UI](https://www.radix-ui.com/) - A set of accessible and unstyled React components.
+*   [Framer Motion](https://www.framer.com/motion/) - A production-ready motion library for React.
+
+## Installation
+
+1.  Clone the repository.
+2.  Install dependencies using Bun:
+
+    ```bash
+    bun install
+    ```
+
+## Running the Project
+
+Start the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Component Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The `src` directory contains the following main directories:
 
-## Learn More
+*   `app`: Contains the Next.js application routes and pages.
+*   `assets`: Contains static assets such as images, icons, and fonts.
+*   `components`: Contains reusable React components.
+*   `lib`: Contains utility functions and helper modules.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   `dev`: Starts the Next.js development server.
+*   `build`: Builds the application for production.
+*   `start`: Starts the Next.js production server.
+*   `lint`: Runs the ESLint linter.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This Next.js project can be easily deployed to platforms like [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/).

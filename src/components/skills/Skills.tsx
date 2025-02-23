@@ -69,7 +69,7 @@ export default function Skills() {
   }, []);
   if (!mounted) return null;
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Background Gradient */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -87,18 +87,18 @@ export default function Skills() {
           }}
         />
       </AnimatePresence>
-      <div className="max-w-[1440px] mx-auto">
+      <div className="w-[90%] md:w-[92%] lg:w-[88%] 2xl:w-[77%] mx-auto pt-[80px] md:pt-[50px] lg:pt-[80px]">
         {/* Heading */}
-      <h1 className="px-6 pt-[80px] md:pt-[50px] lg:pt-[80px] text-[40px] font-[900] dark:text-[#DDEDE2] lg:pl-[70px] lg:text-[62px]">
+      <h1 className="text-[40px] font-[900] dark:text-[#DDEDE2] lg:text-[62px]">
         Skills
       </h1>
       {/* Skill Categories */}
-      <div className="mt-10 lg:mt-10 flex flex-wrap justify-center gap-10 pb-20 lg:mx-auto lg:w-[90%] lg:flex-row-reverse lg:justify-between lg:gap-14">
+      <div className="mt-10 flex flex-wrap justify-center gap-6 xl:flex-row-reverse xl:justify-between">
         {skillCategories.map((category, index) => (
           <div
             key={index}
             className={
-              index === 0 ? "lg:mt-0" : index === 1 ? "lg:mt-10" : "lg:mt-20"
+              index === 0 ? "xl:mt-0" : index === 1 ? "xl:mt-12 2xl:mt-[10vh]" : "xl:mt-24 2xl:mt-[20vh]"
             }
           >
             <SkillCard category={category} />

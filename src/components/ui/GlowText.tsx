@@ -19,7 +19,7 @@ const GlowText = ({
       {/* The glow effect with responsive styles */}
       <span 
         className={`
-          absolute z-[-1]
+          absolute z-1
           
           /* Mobile styles (default) */
           top-[10%] left-[-10%]

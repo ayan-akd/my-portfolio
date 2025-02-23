@@ -12,6 +12,7 @@ import githubIcon from "@/assets/icons/github.svg";
 import lightBulb from "@/assets/icons/lightBulb.svg";
 import darkBulb from "@/assets/icons/darkBulb.svg";
 import downloadIcon from "@/assets/icons/download.svg";
+import profile from "@/assets/images/profile.png";
 
 const socialIcons = [
   {
@@ -31,7 +32,6 @@ const socialIcons = [
     link: "https://github.com/ayan-akd",
   },
 ];
-
 export default function Introduction() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -49,9 +49,7 @@ export default function Introduction() {
     dummyAnchor.click();
     document.body.removeChild(dummyAnchor);
   };
-
   if (!mounted) return null;
-
   return (
     <div>
       <AnimatePresence mode="wait">
@@ -70,9 +68,9 @@ export default function Introduction() {
           }}
         />
       </AnimatePresence>
-
-      <div className="max-w-[1440px] mx-auto min-h-screen px-4 pt-[105px] md:pl-[28px] md:pt-[63px] lg:pl-[97px] lg:pt-[104px]">
-        {/* social icons  */}
+       <div className="w-[90%] grid grid-cols-1 lg:grid-cols-2  md:w-[92%] lg:w-[88%] 2xl:w-[77%] mx-auto pt-[105px] md:pt-[63px] lg:pt-[104px]">
+        <div>
+          {/* social icons  */}
         <div className="flex gap-[37px] md:gap-[20px]">
           {socialIcons.map((icon, index) => (
             <a
@@ -96,7 +94,7 @@ export default function Introduction() {
         {/* introduction  */}
         <div className="mt-2 lg:mt-7">
           <div className="flex items-center">
-            <h1 className="text-[40px] dark:text-[#DDEDE2] md:text-6xl lg:text-[62px]">
+            <h1 className="text-[40px] dark:text-[#DDEDE2] md:text-6xl lg:text-[60px] xl:text-[62px]">
               Hi, I&apos;m{" "}
               <span className={`font-[900] text-[#171717]`}>
                 <GlowText
@@ -113,7 +111,7 @@ export default function Introduction() {
               className="hidden md:mb-2 md:block md:h-[73px] md:w-[73px] lg:mb-5 lg:h-[107px] lg:w-[107px]"
             />
           </div>
-          <p className="mt-[18px] max-w-[373px] text-[17px] dark:text-[#DDEDE2] md:mt-5 md:max-w-[599px] lg:mt-0 lg:max-w-[530px]">
+          <p className="mt-[18px] max-w-[373px] text-[17px] 2xl:text-lg dark:text-[#DDEDE2] md:mt-5 md:max-w-[599px] lg:mt-0 lg:max-w-[530px]">
             I&apos;m passionate about developing web applications that meet
             technical requirements and deliver delightful user experiences.
             Proficient in React.js, Redux, Next.js.{" "}
@@ -132,6 +130,8 @@ export default function Introduction() {
             />
           </button>
         </div>
+        </div>
+        <Image src={profile} alt="Profile" width={200} height={200} className="w-[280px] md:w-[300px] lg:w-[400px] justify-self-end md:justify-self-center lg:justify-self-auto md:ml-20 lg:ml-0 lg:mt-28" />
       </div>
     </div>
   );

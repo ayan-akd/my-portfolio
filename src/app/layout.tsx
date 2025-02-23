@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Fira_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/shared/Navbar";
 import darkFavIcon from "@/assets/favDark.ico";
 import lightFavIcon from "@/assets/favLight.ico";
+import Navbar from "@/components/shared/Navbar";
 
 const firaSans = Fira_Sans({
   subsets: ["latin"],
@@ -84,9 +84,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative max-w-[1440px] mx-auto">
           <Navbar />
-          </div>
           {children}
         </ThemeProvider>
       </body>
