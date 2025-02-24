@@ -73,11 +73,11 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen overflow-hidden bg-[url('/initialLight.svg')] bg-[length:150px_auto] bg-fixed bg-no-repeat dark:bg-[url('/initialDark.svg')] md:bg-[length:200px_auto] lg:bg-[length:auto_auto]">
+    <div className="h-screen bg-[url('/initialLight.svg')] bg-[length:150px_auto] bg-fixed bg-no-repeat dark:bg-[url('/initialDark.svg')] md:bg-[length:200px_auto] lg:bg-[length:auto_auto]">
       <div className="relative h-full">
         <motion.div 
           id="intro" 
-          className="min-h-screen absolute top-0 left-0 w-full"
+          className="min-h-screen absolute top-0 left-0 w-full overflow-y-auto"
           initial="hidden"
           animate={currentSection === 0 ? "visible" : "hidden"}
           variants={sectionVariants}
@@ -90,7 +90,7 @@ export default function Home() {
         </motion.div>
         <motion.div 
           id="skills" 
-          className="min-h-screen absolute top-0 left-0 w-full"
+          className="min-h-screen absolute top-0 left-0 w-full overflow-y-auto"
           initial="hidden"
           animate={currentSection === 1 ? "visible" : "hidden"}
           variants={sectionVariants}
