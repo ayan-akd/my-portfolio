@@ -68,7 +68,7 @@ export default function Introduction() {
           }}
         />
       </AnimatePresence>
-       <div className="w-[90%] grid grid-cols-1 lg:grid-cols-2  md:w-[92%] lg:w-[88%] 2xl:w-[77%] mx-auto pt-[105px] md:pt-[63px] lg:pt-[104px]">
+       <div className="max-w-[1920px] w-[90%] grid grid-cols-1 lg:grid-cols-2  md:w-[92%] lg:w-[88%] 2xl:w-[77%] mx-auto pt-[105px] md:pt-[63px] lg:pt-[104px]">
         <div>
           {/* social icons  */}
         <div className="flex gap-[37px] md:gap-[20px]">

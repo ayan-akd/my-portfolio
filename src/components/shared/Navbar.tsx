@@ -34,7 +34,7 @@ export default function Navbar() {
       <motion.div
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="mx-auto mt-[30px] flex w-[90%] md:w-[92%] lg:w-[88%] 2xl:w-[77%] items-center justify-between gap-6 md:mt-[42px] md:justify-end md:gap-5 md:px-0 lg:mt-[80px] lg:gap-6"
+        className="max-w-[1920px] mx-auto mt-[30px] flex w-[90%] md:w-[92%] lg:w-[88%] 2xl:w-[77%] items-center justify-between gap-6 md:mt-[42px] md:justify-end md:gap-5 md:px-0 lg:mt-[80px] lg:gap-6"
       >
         {/* dark mode and light mode toggle */}
 
@@ -83,7 +83,7 @@ export default function Navbar() {
                     : "blur(20.649999618530273px)",
               }}
             >
-              <div className="mx-auto mt-[86px] w-[90%] md:mt-[118px] md:w-[98%] lg:mt-[167px] 2xl:mt-[10%] lg:w-[91.5%] 2xl:w-[80%]">
+              <div className="max-w-[1920px] mx-auto mt-[86px] w-[90%] md:mt-[118px] md:w-[98%] lg:mt-[167px] 2xl:mt-[10%] lg:w-[91.5%] 2xl:w-[80%]">
                 <div className="grid grid-cols-1 justify-items-end lg:gap-4">
                   {menuItems.map((item, index) => (
                     <a

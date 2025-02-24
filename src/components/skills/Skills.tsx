@@ -87,7 +87,7 @@ export default function Skills() {
           }}
         />
       </AnimatePresence>
-      <div className="w-[90%] md:w-[92%] lg:w-[88%] 2xl:w-[77%] mx-auto pt-[80px] md:pt-[50px] lg:pt-[80px]">
+      <div className="max-w-[1920px] w-[90%] md:w-[92%] lg:w-[88%] 2xl:w-[77%] mx-auto pt-[80px] md:pt-[50px] lg:pt-[80px]">
         {/* Heading */}
       <h1 className="text-[40px] font-[900] dark:text-[#DDEDE2] lg:text-[62px]">
         Skills
