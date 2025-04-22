@@ -8,7 +8,6 @@ import { useState, useEffect, useMemo } from "react";
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
   
-  // Wrap sections array in useMemo to prevent it from changing on every render
   const sections = useMemo(() => ["intro", "skills"], []);
   
   // Adjust these values to control the smoothness
